@@ -1,0 +1,16 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function handleFiles(event) {
+	var files = event.target.files;
+	$("#audio").attr("src", URL.createObjectURL(files[0]));
+	$("#player")[0].load();
+    $("#player")[0].play();
+}
+
+document.getElementById("file").addEventListener("change", handleFiles, false);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<input type="file" id="file" />
+<audio id="player" controls>
+  <source src="" id="audio" />
+</audio>
